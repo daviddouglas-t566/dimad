@@ -1,0 +1,1453 @@
+               ! R56 AND FOCUSING TOLERANCE OF COOLING CHANNEL, MODULATOR THROUGH KICKER       
+               ! BEAMLINE + INJECTION ERRORS FOLLOWED BY CORRECTION 1/14/2023                  
+               ! AMPLIFIER QUADS MISPOWERED 1/30/2023                                          
+               ! GIRDERS MISPOWERED IN SERIES 2/14/2023                                        
+        10                                                                                     
+                                                                                               
+                                                                                               
+                                                                                               
+                                                                                               
+        15     PI=3.14159265358979                                                             
+               CDTOR=PI/180                                                                    
+               CRTOD=180/PI                                                                    
+                                                                                               
+               !MONITORS                                                                       
+        20                                                                                     
+               INJERRX:  GKICK                                                                 
+               INJERRXP: GKICK                                                                 
+               INJERRY:  GKICK                                                                 
+               INJERRYP: GKICK                                                                 
+        25                                                                                     
+               PM1:  MONITOR, L=0                                                              
+               PM2:  MONITOR, L=0                                                              
+               PM3:  MONITOR, L=0                                                              
+               PM4:  MONITOR, L=0                                                              
+        30     PM4A:  MONITOR, L=0; PM4B:  MONITOR, L=0; PM4C:  MONITOR, L=0                   
+               PM4D:  MONITOR, L=0; PM4E:  MONITOR, L=0; PM4F:  MONITOR, L=0                   
+               PM4G:  MONITOR, L=0; PM4H:  MONITOR, L=0; PM4I:  MONITOR, L=0                   
+               PM4J:  MONITOR, L=0; PM4K:  MONITOR, L=0; PM4L:  MONITOR, L=0                   
+               PM4M:  MONITOR, L=0; PM4N:  MONITOR, L=0; PM4O:  MONITOR, L=0                   
+        35     PM4P:  MONITOR, L=0; PM4Q:  MONITOR, L=0; PM4R:  MONITOR, L=0                   
+               PM4S:  MONITOR, L=0; PM4T:  MONITOR, L=0; PM4U:  MONITOR, L=0                   
+               PM4V:  MONITOR, L=0; PM4W:  MONITOR, L=0; PM4X:  MONITOR, L=0                   
+               PM4Y:  MONITOR, L=0; PM4Z:  MONITOR, L=0                                        
+               PM5:  MONITOR, L=0                                                              
+        40     PM6:  MONITOR, L=0                                                              
+               PM6A:  MONITOR, L=0; PM6B:  MONITOR, L=0; PM6C:  MONITOR, L=0                   
+               PM6D:  MONITOR, L=0; PM6E:  MONITOR, L=0; PM6F:  MONITOR, L=0                   
+               PM6G:  MONITOR, L=0; PM6H:  MONITOR, L=0; PM6I:  MONITOR, L=0                   
+               PM6J:  MONITOR, L=0; PM6K:  MONITOR, L=0; PM6L:  MONITOR, L=0                   
+        45     PM6M:  MONITOR, L=0; PM6N:  MONITOR, L=0; PM6O:  MONITOR, L=0                   
+               PM6P:  MONITOR, L=0; PM6Q:  MONITOR, L=0; PM6R:  MONITOR, L=0                   
+               PM6S:  MONITOR, L=0; PM6T:  MONITOR, L=0; PM6U:  MONITOR, L=0                   
+               PM6V:  MONITOR, L=0; PM6W:  MONITOR, L=0; PM6X:  MONITOR, L=0                   
+               PM6Y:  MONITOR, L=0; PM6Z:  MONITOR, L=0                                        
+        50     PM7:  MONITOR, L=0                                                              
+               PM8:  MONITOR, L=0                                                              
+               PMHD: MONITOR, L=0                                                              
+               PMTA1:MONITOR, L=0                                                              
+               PMR1:  MONITOR, L=0                                                             
+        55     PMR2:  MONITOR, L=0                                                             
+               PMTB1:  MONITOR, L=0                                                            
+                                                                                               
+               !CORRECTORS                                                                     
+               CH1: GKICK,       T=1, V=1                                                      
+        60     CV1: GKICK,       T=1, V=1                                                      
+               CH1X: GKICK,       T=1, V=1                                                     
+               CV1X: GKICK,       T=1, V=1                                                     
+               CH2: GKICK,       T=1, V=1                                                      
+               CV2: GKICK,       T=1, V=1                                                      
+        65     CH2X: GKICK,       T=1, V=1                                                     
+               CV2X: GKICK,       T=1, V=1                                                     
+               CH3: GKICK,       T=1, V=1                                                      
+               CV3: GKICK,       T=1, V=1                                                      
+               CH3X: GKICK,       T=1, V=1                                                     
+        70     CV3X: GKICK,       T=1, V=1                                                     
+               CH4: GKICK,       T=1, V=1                                                      
+               CV4: GKICK,       T=1, V=1                                                      
+               CH4X: GKICK,       T=1, V=1                                                     
+               CV4X: GKICK,       T=1, V=1                                                     
+        75     CH5: GKICK,       T=1, V=1                                                      
+               CV5: GKICK,       T=1, V=1                                                      
+               CH5X: GKICK,       T=1, V=1                                                     
+               CV5X: GKICK,       T=1, V=1                                                     
+               CH6: GKICK,       T=1, V=1                                                      
+        80     CV6: GKICK,       T=1, V=1                                                      
+               CH6X: GKICK,       T=1, V=1                                                     
+               CV6X: GKICK,       T=1, V=1                                                     
+               CH7: GKICK,       T=1, V=1                                                      
+               CV7: GKICK,       T=1, V=1                                                      
+        85     CH7X: GKICK,       T=1, V=1                                                     
+               CV7X: GKICK,       T=1, V=1                                                     
+               CH8: GKICK,       T=1, V=1                                                      
+               CV8: GKICK,       T=1, V=1                                                      
+               CH8X: GKICK,       T=1, V=1                                                     
+        90     CV8X: GKICK,       T=1, V=1                                                     
+               CHHD: GKICK,       T=1, V=1                                                     
+               CVHD: GKICK,       T=1, V=1                                                     
+               CHHDX: GKICK,       T=1, V=1                                                    
+               CVHDX: GKICK,       T=1, V=1                                                    
+        95     CHTA1: GKICK,       T=1, V=1                                                    
+               CVTA1: GKICK,       T=1, V=1                                                    
+               CHTA1X: GKICK,       T=1, V=1                                                   
+               CVTA1X: GKICK,       T=1, V=1                                                   
+               CHR1: GKICK,       T=1, V=1                                                     
+       100     CVR1: GKICK,       T=1, V=1                                                     
+               CHR1X: GKICK,       T=1, V=1                                                    
+               CVR1X: GKICK,       T=1, V=1                                                    
+               CHR2: GKICK,       T=1, V=1                                                     
+               CVR2: GKICK,       T=1, V=1                                                     
+       105     CHR2X: GKICK,       T=1, V=1                                                    
+               CVR2X: GKICK,       T=1, V=1                                                    
+               CHTB1: GKICK,       T=1, V=1                                                    
+               CVTB1: GKICK,       T=1, V=1                                                    
+                                                                                               
+       110     !DUMMY CORRECTORS TO BLANK OUT ELEMENTS FOR STEVE'S SPEC'D SCHEME (1 PM/1 CORREC
+               CH10: MARKER                                                                    
+               CV10: MARKER                                                                    
+               CH1X0: MARKER                                                                   
+               CV1X0: MARKER                                                                   
+       115     CH20: MARKER                                                                    
+               CV20: MARKER                                                                    
+               CH2X0: MARKER                                                                   
+               CV2X0: MARKER                                                                   
+               CH30: MARKER                                                                    
+       120     CV30: MARKER                                                                    
+               CH3X0: MARKER                                                                   
+               CV3X0: MARKER                                                                   
+               CH40: MARKER                                                                    
+               CV40: MARKER                                                                    
+       125     CH4X0: MARKER                                                                   
+               CV4X0: MARKER                                                                   
+               CH50: MARKER                                                                    
+               CV50: MARKER                                                                    
+               CH5X0: MARKER                                                                   
+       130     CV5X0: MARKER                                                                   
+               CH60: MARKER                                                                    
+               CV60: MARKER                                                                    
+               CH6X0: MARKER                                                                   
+               CV6X0: MARKER                                                                   
+       135     CH70: MARKER                                                                    
+               CV70: MARKER                                                                    
+               CH7X0: MARKER                                                                   
+               CV7X0: MARKER                                                                   
+               CH80: MARKER                                                                    
+       140     CV80: MARKER                                                                    
+               CH8X0: MARKER                                                                   
+               CV8X0: MARKER                                                                   
+               CHHD0: MARKER                                                                   
+               CVHD0: MARKER                                                                   
+       145     CHHDX0: MARKER                                                                  
+               CVHDX0: MARKER                                                                  
+               CHTA10: MARKER                                                                  
+               CVTA10: MARKER                                                                  
+               CHTA1X0: MARKER                                                                 
+       150     CVTA1X0: MARKER                                                                 
+               CHR10: MARKER                                                                   
+               CVR10: MARKER                                                                   
+               CHR1X0: MARKER                                                                  
+               CVR1X0: MARKER                                                                  
+       155     CHR20: MARKER                                                                   
+               CVR20: MARKER                                                                   
+               CHR2X0: MARKER                                                                  
+               CVR2X0: MARKER                                                                  
+               CHTB10: MARKER                                                                  
+       160     CVTB10: MARKER                                                                  
+                                                                                               
+                                                                                               
+                                                                                               
+                                                                                               
+       165     STARTHM: MARKER                                                                 
+               STARTC1: MARKER                                                                 
+               STARTC2: MARKER                                                                 
+               ASTART1: MARKER                                                                 
+               STARTC34:MARKER                                                                 
+       170     ASTART2: MARKER                                                                 
+               STARTC6: MARKER                                                                 
+               STARTC7: MARKER                                                                 
+               STARTHD: MARKER                                                                 
+               STARTTA1:MARKER                                                                 
+       175     STARTR1: MARKER                                                                 
+               STARTR2: MARKER                                                                 
+               STARTTB1:MARKER                                                                 
+                                                                                               
+                                                                                               
+       180     ! HM REGION                                                                     
+               !---------------------------------------------------------                      
+               DHM1A: DRIFT, L=(71.74809504-71.27809504)                                       
+               DHM1B: DRIFT, L=(74.24809504-71.80809504)                                       
+               DHM1C: DRIFT, L=(75.27809504-74.30809504)                                       
+       185     DHM2A: DRIFT, L=(90.44809504-89.47809504)                                       
+               DHM2B: DRIFT, L=(99.24809504-90.50809504)                                       
+               DHM2C: DRIFT, L=(101.248095-99.30809504)                                        
+               DHM2D: DRIFT, L=(102.748095-101.308095)                                         
+               DHM2E: DRIFT, L=(103.278095-102.808095)                                         
+       190     DHM3A: DRIFT, L=(104.848095-103.378095)                                         
+               DHM3B: DRIFT, L=(106.378095-104.908095)                                         
+                                                                                               
+                                                                                               
+                                                                                               
+       195     QHM1:  QUADRUPOLE, L=0.06,   K1=  0.612548241                                   
+               QHM2:  QUADRUPOLE, L=0.06,   K1= -3.719802072                                   
+               QHM3:  QUADRUPOLE, L=0.06,   K1=  0.019020905                                   
+               QHM4A: QUADRUPOLE, L=0.06,   K1=  3.916637501                                   
+               QHM4:  QUADRUPOLE, L=0.06,   K1= -9.403768821                                   
+       200     QHM5:  QUADRUPOLE, L=0.06,   K1=  9.441928744                                   
+               *QHM6:  QUADRUPOLE, L=0.06/2, K1= 21.78533729                                   
+               QHM6:  QUADRUPOLE, L=0.06,   K1= 21.78533729                                    
+                                                                                               
+                                                                                               
+       205                                                                                     
+               DHMC1A: DRIFT, L=(78.11809504-75.33809504)                                      
+               DHMC1B: DRIFT, L=(78.27809504-78.17809504)                                      
+               DHMC2:  DRIFT, L=(79.57809504-78.57809504)                                      
+               DHMC3A: DRIFT, L=(80.37809504-79.87809504)                                      
+       210     DHMC3B: DRIFT, L=(80.87809504-80.37809504)                                      
+               DHMC4:  DRIFT, L=(82.17809504-81.17809504)                                      
+               DHMC5A: DRIFT, L=(82.57809504-82.47809504)                                      
+               DHMC5B: DRIFT, L=(85.04809504-82.63809504)/2                                    
+               DHMC5C: DRIFT, L=(89.31809504-86.90809504)                                      
+       215     DHMC5D: DRIFT, L=(89.47809504-89.37809504)                                      
+                                                                                               
+               DRFHM1: DRIFT, L=0.2959211971                                                   
+               !RFHM1: DRIFT, L=(75.27999971-73.41999971)                                      
+               ! L=1.86 M LONG SLOT FOR RF CAVITY                                              
+       220     ! FREQUENCY=591000000, WAVELENGTH=0.507263042, NCELL=5                          
+               !AC016:CEBCAV, L=CAVLEN7, EN0=ENERG0,DELTAE=4.284, PHI0=-10, &                  
+               !                      NCELL=7, NSTEP=350                                       
+                                                                                               
+               RFLAMBDA=0.507263042                                                            
+       225     !  RFLAMBDA=299792458/591000000                                                 
+               CAVLEN5=2.5*RFLAMBDA                                                            
+                                                                                               
+               ENERG0=150.0000416                                                              
+               RFHM1: CEBCAV, L=CAVLEN5, EN0=ENERG0, DELTAE=0, PHI0=0, &                       
+       230                           NCELL=5, NSTEP=350                                        
+                                                                                               
+               HMCHIRP: LINE=(DRFHM1, RFHM1, DRFHM1)                                           
+                                                                                               
+               QHMC1: QUADRUPOLE, L=0.06, K1=3.068467132                                       
+       235     QHMC2: QUADRUPOLE, L=0.06, K1=-0.329831716                                      
+               QHMC3: QUADRUPOLE, L=0.06, K1=-1.03225518                                       
+               QHMC4: QUADRUPOLE, L=0.06, K1=1.465635676                                       
+                                                                                               
+               BHMC1: SBEND, L=0.3, ANGLE=0, E1=0, E2=0                                        
+       240     BHMC2: SBEND, L=0.3, ANGLE=0, E1=0, E2=0                                        
+               BHMC3: SBEND, L=0.3, ANGLE=0, E1=0, E2=0                                        
+               BHMC4: SBEND, L=0.3, ANGLE=0, E1=0, E2=0                                        
+                                                                                               
+               BHM1: SBEND, L=0.1, ANGLE=0.127670835*180/PI, E1=0, E2=0                        
+       245     BHM2: SBEND, L=0.1, ANGLE=0.127670835*180/PI, E1=0, E2=0                        
+                                                                                               
+                                                                                               
+               !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+               *                                                                               
+       250     * AT QUADS ONLY, CORRECTOR IN FOCUSING PLANE OF QUAD                            
+               *                                                                               
+               *HMLINE: LINE=(STARTHM,                                               &         
+               *                   DHM1A, PM1,CH1,      QHM1,                        &         
+               *                   DHM1B, PM1,    CV1,  QHM2,                        &         
+       255     *                   DHM1C, PM1,CH1,      QHMC1,                       &         
+               *                   DHMC1A,PM1,    CV1,  QHMC2,                       &         
+               *                   DHMC1B,     BHMC1, DHMC2, BHMC2, DHMC3A,          &         
+               *                   DHMC3B,     BHMC3, DHMC4, BHMC4,                  &         
+               *                   DHMC5A,PM1,    CV1,  QHMC3,                       &         
+       260     *                   DHMC5B,                          DHMC5B,          &         
+               *          HMCHIRP, DHMC5C,PM1,CH1,      QHMC4,      DHMC5D,          &         
+               *                          STARTC1,                                   &         
+               *                   DHM2A, PM1,CH1,      QHM3,                        &         
+               *                   DHM2B, PM1,CH1,      QHM4A,                       &         
+       265     *                   DHM2C, PM1,    CV1,  QHM4,                        &         
+               *                   DHM2D, PM1,CH1,      QHM5,                        &         
+               *    DHM2E,  BHM1,  DHM3A, PM1,CH1,      QHM6,  DHM3B, BHM2)                    
+                                                                                               
+               *                                                                               
+       270     * AT QUADS, IN FOCUSING PLANE, PLUS DISPERSED AND TRANSITIONAL REGIONS          
+               *                                                                               
+                                                                                               
+               HMLINE: LINE=(STARTHM,                                               &          
+                                  DHM1A, PM1,CH1,      QHM1,                        &          
+       275                        DHM1B, PM1,    CV1,  QHM2,                        &          
+                                  DHM1C, PM1,CH1,      QHMC1,                       &          
+                                  DHMC1A,PM1,    CV1,  QHMC2,                       &          
+                                  DHMC1B,      BHMC1, DHMC2, BHMC2, DHMC3A,         &          
+                                         PM1,CH1,CV1,                               &          
+       280                        DHMC3B,     BHMC3, DHMC4, BHMC4,                  &          
+                                  DHMC5A,PM1,CH1,CV1,  QHMC3,                       &          
+                                  DHMC5B,                           DHMC5B,         &          
+                         HMCHIRP, DHMC5C,PM1,CH1,CV1,  QHMC4,       DHMC5D,         &          
+                                  DHM2A, PM1,CH1,      QHM3,                        &          
+       285                        DHM2B, PM1,CH1,      QHM4A,                       &          
+                                  DHM2C, PM1,    CV1,  QHM4,                        &          
+                                  DHM2D, PM1,CH1,      QHM5,                        &          
+                                         STARTC1,                                   &          
+                   DHM2E,  BHM1,  DHM3A, PM1,CH1,CV1,  QHM6,  DHM3B, BHM2)                     
+       290                                                                                     
+               ! C1 REGION                                                                     
+               !---------------------------------------------------------                      
+                                                                                               
+               !DC11:  DRIFT, L=(108.428095-106.478095)/2                                      
+       295     DC11:  DRIFT, L=(108.428095-106.478095)                                         
+               DC12:  DRIFT, L=(110.428095-108.528095)                                         
+               DC13:  DRIFT, L=(112.428095-110.528095)                                         
+               DC14:  DRIFT, L=(114.428095-112.528095)/2                                       
+               DC15:  DRIFT, L=(116.428095-114.528095)/2                                       
+       300     DC16:  DRIFT, L=(118.428095-116.528095)/2                                       
+               DC17:  DRIFT, L=(120.428095-118.528095)/2                                       
+               DC18:  DRIFT, L=(122.428095-120.528095)/2                                       
+               DC19:  DRIFT, L=(124.428095-122.528095)/2                                       
+               DC110: DRIFT, L=(125.978095-124.528095)                                         
+       305     DC111: DRIFT, L=(126.428095-125.978095)                                         
+               DC112: DRIFT, L=(128.428095-126.528095)                                         
+               DC113: DRIFT, L=(130.428095-128.528095)/2                                       
+               DC114: DRIFT, L=(132.428095-130.528095)/2                                       
+               DC115: DRIFT, L=(134.428095-132.528095)/2                                       
+       310     DC116: DRIFT, L=(136.428095-134.528095)/2                                       
+               DC117: DRIFT, L=(138.428095-136.528095)/2                                       
+               DC118: DRIFT, L=(140.428095-138.528095)/2                                       
+               DC119: DRIFT, L=(142.428095-140.528095)                                         
+               DC120: DRIFT, L=(144.428095-142.528095)/2                                       
+       315     DC121: DRIFT, L=(145.478095-144.528095)                                         
+                                                                                               
+               QC11:QUADRUPOLE,  L=0.1, K1= -7.163894757                                       
+               QC12:QUADRUPOLE,  L=0.1, K1=  5.864634134                                       
+               QC13:QUADRUPOLE,  L=0.1, K1=-10.14756406                                        
+       320     QC14:QUADRUPOLE,  L=0.1, K1=  5.142207883                                       
+               QC15:QUADRUPOLE,  L=0.1, K1=-10.14756406                                        
+               QC16:QUADRUPOLE,  L=0.1, K1=  5.142207883                                       
+               QC17:QUADRUPOLE,  L=0.1, K1=-10.14756406                                        
+               QC18:QUADRUPOLE,  L=0.1, K1=  5.142207883                                       
+       325     QC19:QUADRUPOLE,  L=0.1, K1=-10.14756406                                        
+               QC110:QUADRUPOLE, L=0.1, K1=  5.142207883                                       
+               QC111:QUADRUPOLE, L=0.1, K1=-10.14756406                                        
+               QC112:QUADRUPOLE, L=0.1, K1=  5.142207883                                       
+               QC113:QUADRUPOLE, L=0.1, K1=-10.14756406                                        
+       330     QC114:QUADRUPOLE, L=0.1, K1=  5.142207883                                       
+               QC115:QUADRUPOLE, L=0.1, K1=-10.14756406                                        
+               QC116:QUADRUPOLE, L=0.1, K1=  5.142207883                                       
+               QC117:QUADRUPOLE, L=0.1, K1= -8.599647896                                       
+               QC118:QUADRUPOLE, L=0.1, K1=  5.816401819                                       
+       335     QC119:QUADRUPOLE, L=0.1, K1= -7.564732421                                       
+                                                                                               
+               !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+                                                                                               
+               C1LINE:   LINE=( STARTC1, INJERRX, INJERRXP, INJERRY, INJERRYP, &               
+       340                                          DC11, PM2,CH2,CV2, QC11,   &               
+                  DC12,       PM2,CH2, QC12,  DC13,       PM2,    CV2, QC13,   &               
+                  DC14, DC14, PM2,CH2, QC14,  DC15, DC15, PM2,    CV2, QC15,   &               
+                  DC16, DC16, PM2,CH2, QC16,  DC17, DC17, PM2,    CV2, QC17,   &               
+                  DC18, DC18, PM2,CH2, QC18,  DC19, DC19, PM2,    CV2, QC19,   &               
+       345        DC110,DC111,PM2,CH2, QC110, DC112,      PM2,    CV2, QC111,  &               
+                  DC113,DC113,PM2,CH2, QC112, DC114,DC114,PM2,    CV2, QC113,  &               
+                  DC115,DC115,PM2,CH2, QC114, DC116,DC116,PM2,    CV2, QC115,  &               
+                  DC117,DC117,PM2,CH2, QC116, DC118,DC118,PM2,    CV2, QC117,  &               
+                  DC119,      PM2,CH2, QC118,                                  &               
+       350                                STARTC2,                             &               
+                                              DC120,DC120,PM2,CH2,CV2, QC119, DC121)           
+                                                                                               
+               HMC1: LINE=(HMLINE, C1LINE)                                                     
+                                                                                               
+       355     ! C2 REGION                                                                     
+               !---------------------------------------------------------                      
+                                                                                               
+               DC211: DRIFT, L=(146.353095-145.778095)                                         
+               DC212: DRIFT, L=(146.978095-146.453095)                                         
+       360     DC213: DRIFT, L=(147.603095-147.078095)                                         
+               DC214: DRIFT, L=(148.278095-147.703095)                                         
+               DC221: DRIFT, L=(149.028095-148.578095)                                         
+               DC222: DRIFT, L=(150.028095-149.128095)                                         
+               DC223: DRIFT, L=(151.028095-150.128095)/2                                       
+       365     DC224: DRIFT, L=(151.578095-151.128095)                                         
+               DC231: DRIFT, L=(152.453095-151.878095)                                         
+               DC232: DRIFT, L=(153.078095-152.553095)                                         
+               DC233: DRIFT, L=(153.703095-153.178095)                                         
+               DC234: DRIFT, L=(154.378095-153.803095)                                         
+       370     DC241: DRIFT, L=(154.778095-154.678095)/2                                       
+               DC242: DRIFT, L=(156.0523538-154.878095)                                        
+               DC243: DRIFT, L=(157.3266125-156.1523538)                                       
+               DC244: DRIFT, L=(157.5266125-157.4266125)                                       
+                                                                                               
+       375     QC21: QUADRUPOLE, L=0.1,  K1=  9.477408362                                      
+               QC22: QUADRUPOLE, L=0.1,  K1=  4.935732683                                      
+               QC23: QUADRUPOLE, L=0.1,  K1=-10.9133704                                        
+               QC24: QUADRUPOLE, L=0.1,  K1=  1.060196483                                      
+               *QC25: QUADRUPOLE, L=0.05, K1=  3.577377988                                     
+       380     QC25: QUADRUPOLE, L=0.1, K1=  3.577377988                                       
+               QC26: QUADRUPOLE, L=0.1,  K1=  4.848477623                                      
+               QC27: QUADRUPOLE, L=0.1,  K1= -10.98776312                                      
+               QC28: QUADRUPOLE, L=0.1,  K1=  3.373260457                                      
+               QC29: QUADRUPOLE, L=0.1,  K1= 19.80760864                                       
+       385     QC210: QUADRUPOLE, L=0.1, K1=-11.74334119                                       
+               QC211: QUADRUPOLE, L=0.1, K1= 12.11740526                                       
+               QC212: QUADRUPOLE, L=0.1, K1=-14.53549946                                       
+                                                                                               
+               BC21: SBEND, L=0.3, ANGLE=0.084544751*CRTOD, E1=0, E2=0, TILT=180               
+       390     BC22: SBEND, L=0.3, ANGLE=0.052359878*CRTOD, E1=0, E2=0                         
+               BC23: SBEND, L=0.3, ANGLE=0.052359878*CRTOD, E1=0, E2=0, TILT=180               
+               BC24: SBEND, L=0.3, ANGLE=0.052359878*CRTOD, E1=0, E2=0                         
+                                                                                               
+               !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+       395                                                                                     
+               C2LINE: LINE=(BC21, DC211, PM3,CH3,CV3, QC21,  &                                
+                                   DC212, PM3,CH3,     QC22,  &                                
+                                   DC213, PM3,    CV3, QC23,  &                                
+                      DC214, BC22, DC221, PM3,    CV3, QC24,  &                                
+       400                         DC222, PM3,CH3,CV3, QC25,  &                                
+                      DC223,       DC223, PM3,CH3,     QC26,  &                                
+                      DC224, BC23, DC231, PM3,    CV3, QC27,  &                                
+                      DC232,              PM3,CH3,CV3, QC28,  &                                
+                      DC233,              PM3,CH3,     QC29,  &                                
+       405            DC234, BC24, DC241,                     &                                
+                                            ASTART1,          &                                
+                                   DC241, PM3,    CV3, QC210, &                                
+                                   DC242, PM3,CH3,     QC211, &                                
+                                   DC243, PM3,CH3,CV3, QC212, DC244)                           
+       410                                                                                     
+               HMC1C2: LINE=(HMLINE, C1LINE, C2LINE)                                           
+                                                                                               
+               ! C3/C4/AMPLIFIER REGION                                                        
+               !---------------------------------------------------------                      
+       415                                                                                     
+               DC3TRP11: DRIFT, L=(158.0566125-157.5266125)                                    
+               DC3TRP12: DRIFT, L=(158.2266125-158.1166125)                                    
+               DC3TRP13: DRIFT, L=(158.4566125-158.3466125)                                    
+               DC3TRP14: DRIFT, L=(159.0466125-158.5166125)                                    
+       420                                                                                     
+               QC3TRP11: QUADRUPOLE, L=0.06, K1=-37.812383                                     
+               QC3TRP12: QUADRUPOLE, L=0.12, K1= 33.112144                                     
+               QC3TRP13: QUADRUPOLE, L=0.06, K1=-37.812383                                     
+                                                                                               
+       425     CXTRIP(PM): LINE=(DC3TRP11,           QC3TRP11, &                               
+                              DC3TRP12, PM,          QC3TRP12, &                               
+                              DC3TRP13,              QC3TRP13, DC3TRP14)                       
+               BXTRIP(PM): LINE=(DC3TRP11,       PM, QC3TRP11, &                               
+                              DC3TRP12,              QC3TRP12, &                               
+       430                    DC3TRP13,          PM, QC3TRP13, DC3TRP14)                       
+                                                                                               
+               C3TRIP2: LINE=(DC3TRP11,              QC3TRP11, &                               
+                              DC3TRP12, PM6,CH6,CV6, QC3TRP12, &                               
+                              DC3TRP13,              QC3TRP13, DC3TRP14)                       
+       435                                                                                     
+               C3TRIP2X: LINE=(DC3TRP11,                        QC3TRP11, &                    
+                               DC3TRP12, PM6,CH6,CV6,CH6X,CV6X, QC3TRP12, &                    
+                               DC3TRP13,                        QC3TRP13, DC3TRP14)            
+                                                                                               
+       440     DC321: DRIFT, L=(197.1966125-197.0466125)                                       
+               DC322: DRIFT, L=(197.4966125-197.2966125)                                       
+               DC323: DRIFT, L=(199.4966125-197.5966125)                                       
+               DC324: DRIFT, L=(199.7966125-199.5966125)                                       
+               DC325: DRIFT, L=(200.0466125-199.8966125)                                       
+       445                                                                                     
+               QC35: QUADRUPOLE, L=0.1, K1=-10.31437328                                        
+               QC36: QUADRUPOLE, L=0.1, K1= 19.32383068                                        
+               QC37: QUADRUPOLE, L=0.1, K1=-12.27291672                                        
+               QC38: QUADRUPOLE, L=0.1, K1= 4.870354325                                        
+       450                                                                                     
+               C3MATCH: LINE=(DC321, PM5,CH5,CV5, QC35, &                                      
+                              DC322, PM5,CH5,     QC36, &                                      
+                              DC323, PM5,    CV5, QC37, DC324, QC38, DC325)                    
+               RC3MATCH:LINE=(DC325,              QC38, &                                      
+       455                    DC324,                    &                                      
+                                      ASTART2,          &                                      
+                                     PM5,    CV5, QC37, &                                      
+                              DC323, PM5,CH5,     QC36, &                                      
+                              DC322, PM5,CH5,CV5, QC35, DC321)                                 
+       460                                                                                     
+               DC411: DRIFT, L=(201.2993108-200.3467389)                                       
+               DC412: DRIFT, L=(202.3544203-201.3993108)                                       
+               DC421: DRIFT, L=(202.8045468-202.6545468)                                       
+               DC422: DRIFT, L=(203.3545468-202.9045468)                                       
+       465     DC423: DRIFT, L=(203.9045468-203.4545468)                                       
+               DC424: DRIFT, L=(204.1545468-204.0045468)                                       
+               DC431: DRIFT, L=(205.4072452-204.4546733)                                       
+               DC432: DRIFT, L=(206.4623547-205.5072452)                                       
+                                                                                               
+       470     QC41: QUADRUPOLE, L=0.1, K1=  9.431931581                                       
+               QC42: QUADRUPOLE, L=0.1, K1=-24.92612941                                        
+               *QC43: QUADRUPOLE, L=0.05,K1= 13.7880642                                        
+               QC43: QUADRUPOLE, L=0.1, K1= 13.7880642                                         
+               QC44: QUADRUPOLE, L=0.1, K1=-24.92612941                                        
+       475     QC45: QUADRUPOLE, L=0.1, K1=  9.431931581                                       
+                                                                                               
+               BC41: SBEND, L=0.300126458947348, ANGLE=0.050283525*CRTOD, &                    
+                               E1=0, E2=0.050283525*CRTOD, TILT=180                            
+               BC42: SBEND, L=0.300126458947348, ANGLE=0.050283525*CRTOD, &                    
+       480                     E2=0, E1=0.050283525*CRTOD                                      
+               BC43: SBEND, L=0.300126458947348, ANGLE=0.050283525*CRTOD, &                    
+                               E1=0, E2=0.050283525*CRTOD                                      
+               BC44: SBEND, L=0.300126458947348, ANGLE=0.050283525*CRTOD, &                    
+                               E2=0, E1=0.050283525*CRTOD, TILT=180                            
+       485                                                                                     
+               C4CHIC: LINE=(BC41, DC411, PM5,CH5,     QC41, &                                 
+                      DC412, BC42, DC421, PM5,    CV5, QC42, &                                 
+                      DC422,              PM5,CH5,     QC43, &                                 
+                      DC423,              PM5,    CV5, QC44, &                                 
+       490            DC424, BC43, DC431, PM5,CH5,     QC45, DC432, BC44)                      
+                                                                                               
+               !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+                                                                                               
+               T01I:GKICK; T01O:GKICK; T02I:GKICK; T02O:GKICK; T03I:GKICK; T03O:GKICK          
+       495     T04I:GKICK; T04O:GKICK; T05I:GKICK; T05O:GKICK; T06I:GKICK; T06O:GKICK          
+               T07I:GKICK; T07O:GKICK; T08I:GKICK; T08O:GKICK; T09I:GKICK; T09O:GKICK          
+               T10I:GKICK; T10O:GKICK; T11I:GKICK; T11O:GKICK; T12I:GKICK; T12O:GKICK          
+               T13I:GKICK; T13O:GKICK; T14I:GKICK; T14O:GKICK; T15I:GKICK; T15O:GKICK          
+               T16I:GKICK; T16O:GKICK; T17I:GKICK; T17O:GKICK; T18I:GKICK; T18O:GKICK          
+       500     T19I:GKICK; T19O:GKICK; T20I:GKICK; T20O:GKICK; T21I:GKICK; T21O:GKICK          
+               T22I:GKICK; T22O:GKICK; T23I:GKICK; T23O:GKICK; T24I:GKICK; T24O:GKICK          
+               T25I:GKICK; T25O:GKICK; T26I:GKICK; T26O:GKICK                                  
+                                                                                               
+               U01I:GKICK; U01O:GKICK; U02I:GKICK; U02O:GKICK; U03I:GKICK; U03O:GKICK          
+       505     U04I:GKICK; U04O:GKICK; U05I:GKICK; U05O:GKICK; U06I:GKICK; U06O:GKICK          
+               U07I:GKICK; U07O:GKICK; U08I:GKICK; U08O:GKICK; U09I:GKICK; U09O:GKICK          
+               U10I:GKICK; U10O:GKICK; U11I:GKICK; U11O:GKICK; U12I:GKICK; U12O:GKICK          
+               U13I:GKICK; U13O:GKICK; U14I:GKICK; U14O:GKICK; U15I:GKICK; U15O:GKICK          
+               U16I:GKICK; U16O:GKICK; U17I:GKICK; U17O:GKICK; U18I:GKICK; U18O:GKICK          
+       510     U19I:GKICK; U19O:GKICK; U20I:GKICK; U20O:GKICK; U21I:GKICK; U21O:GKICK          
+               U22I:GKICK; U22O:GKICK; U23I:GKICK; U23O:GKICK; U24I:GKICK; U24O:GKICK          
+               U25I:GKICK; U25O:GKICK; U26I:GKICK; U26O:GKICK                                  
+                                                                                               
+               C01I:GKICK; C01O:GKICK; C02I:GKICK; C02O:GKICK; C03I:GKICK; C03O:GKICK          
+       515     C04I:GKICK; C04O:GKICK; C05I:GKICK; C05O:GKICK; C06I:GKICK; C06O:GKICK          
+               C07I:GKICK; C07O:GKICK; C08I:GKICK; C08O:GKICK; C09I:GKICK; C09O:GKICK          
+               C10I:GKICK; C10O:GKICK; C11I:GKICK; C11O:GKICK; C12I:GKICK; C12O:GKICK          
+               C13I:GKICK; C13O:GKICK; C14I:GKICK; C14O:GKICK; C15I:GKICK; C15O:GKICK          
+               C16I:GKICK; C16O:GKICK; C17I:GKICK; C17O:GKICK; C18I:GKICK; C18O:GKICK          
+       520     C19I:GKICK; C19O:GKICK; C20I:GKICK; C20O:GKICK; C21I:GKICK; C21O:GKICK          
+               C22I:GKICK; C22O:GKICK; C23I:GKICK; C23O:GKICK; C24I:GKICK; C24O:GKICK          
+               C25I:GKICK; C25O:GKICK; C26I:GKICK; C26O:GKICK                                  
+                                                                                               
+               D01I:GKICK; D01O:GKICK; D02I:GKICK; D02O:GKICK; D03I:GKICK; D03O:GKICK          
+       525     D04I:GKICK; D04O:GKICK; D05I:GKICK; D05O:GKICK; D06I:GKICK; D06O:GKICK          
+               D07I:GKICK; D07O:GKICK; D08I:GKICK; D08O:GKICK; D09I:GKICK; D09O:GKICK          
+               D10I:GKICK; D10O:GKICK; D11I:GKICK; D11O:GKICK; D12I:GKICK; D12O:GKICK          
+               D13I:GKICK; D13O:GKICK; D14I:GKICK; D14O:GKICK; D15I:GKICK; D15O:GKICK          
+               D16I:GKICK; D16O:GKICK; D17I:GKICK; D17O:GKICK; D18I:GKICK; D18O:GKICK          
+       530     D19I:GKICK; D19O:GKICK; D20I:GKICK; D20O:GKICK; D21I:GKICK; D21O:GKICK          
+               D22I:GKICK; D22O:GKICK; D23I:GKICK; D23O:GKICK; D24I:GKICK; D24O:GKICK          
+               D25I:GKICK; D25O:GKICK; D26I:GKICK; D26O:GKICK                                  
+                                                                                               
+               !AMPTRIP1:LINE=(24*C3TRIP1, STARTC34,2*C3TRIP1X)                                
+       535     !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+                                                                                               
+               XXXX:MARKER                                                                     
+                                                                                               
+               AMPTRIP(CI,TI,PM,TO,CO):LINE=(CI,TI,CXTRIP(PM),TO,CO,XXXX)                      
+       540     BMPTRIP(CI,TI,PM,TO,CO):LINE=(CI,TI,BXTRIP(PM),TO,CO,XXXX)                      
+                                                                                               
+                                                                                               
+               AMPTRIP1:LINE=(AMPTRIP(C01I,T01I,PM4A,T01O,C01O), &                             
+                              AMPTRIP(C02I,T02I,PM4B,T02O,C02O), &                             
+       545                    AMPTRIP(C03I,T03I,PM4C,T03O,C03O), &                             
+                              AMPTRIP(C04I,T04I,PM4D,T04O,C04O), &                             
+                              AMPTRIP(C05I,T05I,PM4E,T05O,C05O), &                             
+                              AMPTRIP(C06I,T06I,PM4F,T06O,C06O), &                             
+                              AMPTRIP(C07I,T07I,PM4G,T07O,C07O), &                             
+       550                    AMPTRIP(C08I,T08I,PM4H,T08O,C08O), &                             
+                              AMPTRIP(C09I,T09I,PM4I,T09O,C09O), &                             
+                              AMPTRIP(C10I,T10I,PM4J,T10O,C10O), &                             
+                              AMPTRIP(C11I,T11I,PM4K,T11O,C11O), &                             
+                              AMPTRIP(C12I,T12I,PM4L,T12O,C12O), &                             
+       555                    AMPTRIP(C13I,T13I,PM4M,T13O,C13O), &                             
+                              AMPTRIP(C14I,T14I,PM4N,T14O,C14O), &                             
+                              AMPTRIP(C15I,T15I,PM4O,T15O,C15O), &                             
+                              AMPTRIP(C16I,T16I,PM4P,T16O,C16O), &                             
+                              AMPTRIP(C17I,T17I,PM4Q,T17O,C17O), &                             
+       560                    AMPTRIP(C18I,T18I,PM4R,T18O,C18O), &                             
+                              AMPTRIP(C19I,T19I,PM4S,T19O,C19O), &                             
+                              AMPTRIP(C20I,T20I,PM4T,T20O,C20O), &                             
+                              AMPTRIP(C21I,T21I,PM4U,T21O,C21O), &                             
+                              AMPTRIP(C22I,T22I,PM4V,T22O,C22O), &                             
+       565                    AMPTRIP(C23I,T23I,PM4W,T23O,C23O), &                             
+                              AMPTRIP(C24I,T24I,PM4X,T24O,C24O), &                             
+                              AMPTRIP(C25I,T25I,PM4Y,T25O,C25O), &                             
+                                                STARTC34,        &                             
+                              AMPTRIP(C26I,T26I,PM4Z,T26O,C26O) )                              
+       570                                                                                     
+               AMPTRIP2:LINE=(AMPTRIP(D01I,U01I,PM6A,U01O,D01O), &                             
+                              AMPTRIP(D02I,U02I,PM6B,U02O,D02O), &                             
+                              AMPTRIP(D03I,U03I,PM6C,U03O,D03O), &                             
+                              AMPTRIP(D04I,U04I,PM6D,U04O,D04O), &                             
+       575                    AMPTRIP(D05I,U05I,PM6E,U05O,D05O), &                             
+                              AMPTRIP(D06I,U06I,PM6F,U06O,D06O), &                             
+                              AMPTRIP(D07I,U07I,PM6G,U07O,D07O), &                             
+                              AMPTRIP(D08I,U08I,PM6H,U08O,D08O), &                             
+                              AMPTRIP(D09I,U09I,PM6I,U09O,D09O), &                             
+       580                    AMPTRIP(D10I,U10I,PM6J,U10O,D10O), &                             
+                              AMPTRIP(D11I,U11I,PM6K,U11O,D11O), &                             
+                              AMPTRIP(D12I,U12I,PM6L,U12O,D12O), &                             
+                              AMPTRIP(D13I,U13I,PM6M,U13O,D13O), &                             
+                              AMPTRIP(D14I,U14I,PM6N,U14O,D14O), &                             
+       585                    AMPTRIP(D15I,U15I,PM6O,U15O,D15O), &                             
+                              AMPTRIP(D16I,U16I,PM6P,U16O,D16O), &                             
+                              AMPTRIP(D17I,U17I,PM6Q,U17O,D17O), &                             
+                              AMPTRIP(D18I,U18I,PM6R,U18O,D18O), &                             
+                              AMPTRIP(D19I,U19I,PM6S,U19O,D19O), &                             
+       590                    AMPTRIP(D20I,U20I,PM6T,U20O,D20O), &                             
+                              AMPTRIP(D21I,U21I,PM6U,U21O,D21O), &                             
+                              AMPTRIP(D22I,U22I,PM6V,U22O,D22O), &                             
+                              AMPTRIP(D23I,U23I,PM6W,U23O,D23O), &                             
+                              AMPTRIP(D24I,U24I,PM6X,U24O,D24O), &                             
+       595                    AMPTRIP(D25I,U25I,PM6Y,U25O,D25O), &                             
+                                                STARTC6,        &                              
+                              AMPTRIP(D26I,U26I,PM6Z,U26O,D26O) )                              
+                                                                                               
+                                                                                               
+       600                                                                                     
+                                                                                               
+               AMPTRIPX:LINE=(24*C3TRIP2, STARTC6, 2*C3TRIP2X)                                 
+                                                                                               
+               HM2AMP: LINE=(HMC1C2, AMPTRIP1, C3MATCH, C4CHIC, RC3MATCH, AMPTRIP2)            
+       605     !HM2AMP: LINE=(HMC1C2, AMPTRIP1, C4CHIC, RC3MATCH, AMPTRIP2)                    
+                                                                                               
+               !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+               ! C6 REGION                                                                     
+               !---------------------------------------------------------                      
+       610                                                                                     
+               DC641: DRIFT, L=(249.3824811-249.2824811)                                       
+               DC642: DRIFT, L=(250.6567398-249.4824811)                                       
+               DC643: DRIFT, L=(251.9309986-250.7567398)                                       
+               DC644: DRIFT, L=(252.1309986-252.0309986)                                       
+       615     DC631: DRIFT, L=(253.0059986-252.4309986)                                       
+               DC632: DRIFT, L=(253.6309986-253.1059986)                                       
+               DC633: DRIFT, L=(254.2559986-253.7309986)                                       
+               DC634: DRIFT, L=(254.9309986-254.3559986)                                       
+               DC621: DRIFT, L=(255.6809986-255.2309986)                                       
+       620     DC622: DRIFT, L=(256.6809986-255.7809986)                                       
+               DC623: DRIFT, L=(257.6809986-256.7809986)                                       
+               DC624: DRIFT, L=(258.2309986-257.7809986)                                       
+               DC611: DRIFT, L=(259.1059986-258.5309986)                                       
+               DC612: DRIFT, L=(259.7309986-259.2059986)                                       
+       625     DC613: DRIFT, L=(260.3559986-259.8309986)                                       
+               DC614: DRIFT, L=(261.0309986-260.4559986)                                       
+                                                                                               
+                                                                                               
+               QC612: QUADRUPOLE, L=0.1, K1=-14.53549946                                       
+       630     QC611: QUADRUPOLE, L=0.1, K1= 12.11740526                                       
+               QC610: QUADRUPOLE, L=0.1, K1=-11.74334119                                       
+               QC69:  QUADRUPOLE, L=0.1, K1= 19.80760864                                       
+               QC68:  QUADRUPOLE, L=0.1, K1=  3.373260457                                      
+               QC67:  QUADRUPOLE, L=0.1, K1=-10.98776312                                       
+       635     QC66:  QUADRUPOLE, L=0.1, K1=  4.848477623                                      
+               *QC65:  QUADRUPOLE, L=0.05,K1=  3.577377988                                     
+               QC65:  QUADRUPOLE, L=0.1, K1=  3.577377988                                      
+               QC64:  QUADRUPOLE, L=0.1, K1=  1.060196483                                      
+               QC63:  QUADRUPOLE, L=0.1, K1=-10.9133704                                        
+       640     QC62:  QUADRUPOLE, L=0.1, K1=  4.935732683                                      
+               QC61:  QUADRUPOLE, L=0.1, K1=  9.477408362                                      
+                                                                                               
+               BC64: SBEND, L=0.3, ANGLE=0.052359878*CRTOD,E1=0,E2=0                           
+               BC63: SBEND, L=0.3, ANGLE=0.052359878*CRTOD,E1=0,E2=0, TILT=180                 
+       645     BC62: SBEND, L=0.3, ANGLE=0.052359878*CRTOD,E1=0,E2=0                           
+               BC61: SBEND, L=0.3, ANGLE=0.084544751*CRTOD,E1=0,E2=0, TILT=180                 
+                                                                                               
+                                                                                               
+               !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+       650     C6LINE: LINE=(                    DC641, PM7,CH7,CV7, QC612, &                  
+                                                 DC642, PM7,CH7,     QC611, &                  
+                                                 DC643, PM7,    CV7, QC610, &                  
+                                    DC644, BC64, DC631, PM7,CH7,     QC69,  &                  
+                                                 DC632, PM7,CH7,     QC68,  &                  
+       655                                       DC633, PM7,    CV7, QC67,  &                  
+                                    DC634, BC63, DC621, PM7,CH7,CV7, QC66,  &                  
+                                                 DC622, PM7,    CV7, QC65,  &                  
+                                                 DC623, PM7,CH7,     QC64,  &                  
+                                    DC624, BC62, DC611, PM7,    CV7, QC63,  &                  
+       660                                          STARTC7,                &                  
+                                                 DC612, PM7,CH7,CV7, QC62,  &                  
+                                                 DC613, PM7,CH7,CV7, QC61,  &                  
+                                    DC614, BC61                              )                 
+                                                                                               
+       665     HM2C6: LINE=(HM2AMP, C6LINE)                                                    
+                                                                                               
+                                                                                               
+                                                                                               
+                                                                                               
+       670     ! C7 REGION                                                                     
+               !---------------------------------------------------------                      
+                                                                                               
+               DC71: DRIFT, L=(262.2809986-261.3309986)                                        
+               DC72: DRIFT, L=(264.2809986-262.3809986)                                        
+       675     DC73: DRIFT, L=(266.2809986-264.3809986)                                        
+               DC74: DRIFT, L=(268.2809986-266.3809986)                                        
+               DC75: DRIFT, L=(270.2809986-268.3809986)                                        
+               DC76: DRIFT, L=(272.2809986-270.3809986)                                        
+               DC77: DRIFT, L=(274.2809986-272.3809986)                                        
+       680     DC78: DRIFT, L=(276.2809986-274.3809986)                                        
+               DC79: DRIFT, L=(278.2809986-276.3809986)                                        
+               DC710:DRIFT, L=(280.2809986-278.3809986)                                        
+               DC711:DRIFT, L=(280.8309986-280.3809986)                                        
+               DC712:DRIFT, L=(282.2809986-280.8309986)                                        
+       685     DC713:DRIFT, L=(284.2809986-282.3809986)                                        
+               DC714:DRIFT, L=(286.2809986-284.3809986)                                        
+               DC715:DRIFT, L=(288.2809986-286.3809986)                                        
+               DC716:DRIFT, L=(290.2809986-288.3809986)                                        
+               DC717:DRIFT, L=(292.2809986-290.3809986)                                        
+       690     DC718:DRIFT, L=(294.2809986-292.3809986)                                        
+               DC719:DRIFT, L=(296.2809986-294.3809986)                                        
+               DC720:DRIFT, L=(298.2809986-296.3809986)                                        
+               DC721:DRIFT, L=(300.3309986-298.3809986)                                        
+                                                                                               
+       695     QC719:QUADRUPOLE, L=0.1, K1= -7.564732421                                       
+               QC718:QUADRUPOLE, L=0.1, K1=  5.816401819                                       
+               QC717:QUADRUPOLE, L=0.1, K1= -8.599647896                                       
+               QC716:QUADRUPOLE, L=0.1, K1=  5.142207883                                       
+               QC715:QUADRUPOLE, L=0.1, K1=-10.14756406                                        
+       700     QC714:QUADRUPOLE, L=0.1, K1=  5.142207883                                       
+               QC713:QUADRUPOLE, L=0.1, K1=-10.14756406                                        
+               QC712:QUADRUPOLE, L=0.1, K1=  5.142207883                                       
+               QC711:QUADRUPOLE, L=0.1, K1=-10.14756406                                        
+               QC710:QUADRUPOLE, L=0.1, K1=  5.142207883                                       
+       705     QC79: QUADRUPOLE, L=0.1, K1=-10.14756406                                        
+               QC78: QUADRUPOLE, L=0.1, K1=  5.142207883                                       
+               QC77: QUADRUPOLE, L=0.1, K1=-10.14756406                                        
+               QC76: QUADRUPOLE, L=0.1, K1=  5.142207883                                       
+               QC75: QUADRUPOLE, L=0.1, K1=-10.14756406                                        
+       710     QC74: QUADRUPOLE, L=0.1, K1=  5.48325732                                        
+               QC73: QUADRUPOLE, L=0.1, K1= -9.745219553                                       
+               QC72: QUADRUPOLE, L=0.1, K1=  5.553926761                                       
+               QC71: QUADRUPOLE, L=0.1, K1= -9.563592866                                       
+                                                                                               
+       715                                                                                     
+               !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+               C7LINE: LINE=(DC71, PM8,CH8,CV8, QC719, DC72, PM8,CH8,     QC718, &             
+                             DC73, PM8,    CV8, QC717, DC74, PM8,CH8,     QC716, &             
+                             DC75, PM8,    CV8, QC715, DC76, PM8,CH8,     QC714, &             
+       720                   DC77, PM8,    CV8, QC713, DC78, PM8,CH8,     QC712, &             
+                             DC79, PM8,    CV8, QC711, DC710,PM8,CH8,     QC710, &             
+                      DC711, DC712,PM8,    CV8, QC79,  DC713,PM8,CH8,     QC78,  &             
+                             DC714,PM8,    CV8, QC77,  DC715,PM8,CH8,     QC76,  &             
+                             DC716,PM8,    CV8, QC75,  DC717,PM8,CH8,     QC74,  &             
+       725                   DC718,PM8,    CV8, QC73,  &                                       
+                                                STARTHD,                         &             
+                             DC719,PM8,CH8,CV8, QC72,  DC720,PM8,CH8,CV8, QC71,  &             
+                                                                                DC721)         
+               !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+       730                                                                                     
+               HM2C7: LINE=(HM2C6, C7LINE)                                                     
+                                                                                               
+               COOLIT: LINE=(C1LINE, C2LINE, AMPTRIP1, C3MATCH, &                              
+                           C4CHIC, RC3MATCH, AMPTRIP2, C6LINE, C7LINE)                         
+       735                                                                                     
+                                                                                               
+               ! HD REGION                                                                     
+               !---------------------------------------------------------                      
+                                                                                               
+       740     DHD21: DRIFT, L=(302.9309986-300.4309986)                                       
+               DHD22: DRIFT, L=(305.4009986-302.9909986)                                       
+               DHD23: DRIFT, L=(307.8709986-305.4609986)                                       
+               DHD24: DRIFT, L=(310.4309986-307.9309986)                                       
+               DHD11: DRIFT, L=(311.0009986-310.5309986)                                       
+       745     DHD12: DRIFT, L=(312.5009986-311.0609986)                                       
+               DHD13: DRIFT, L=(315.5009986-312.5609986)                                       
+               DHD14: DRIFT, L=(319.0009986-315.5609986)                                       
+               DHD15: DRIFT, L=(320.0009986-319.0609986)                                       
+               DHD16: DRIFT, L=(320.5309986-320.0609986)                                       
+       750                                                                                     
+               QHD7:  QUADRUPOLE, L=0.06, K1=-13.31287102                                      
+               *QHD6:  QUADRUPOLE, L=0.03, K1= 10.12255574                                     
+               QHD6:  QUADRUPOLE, L=0.06, K1= 10.12255574                                      
+               QHD5:  QUADRUPOLE, L=0.06, K1=-13.31287102                                      
+       755     QHD4:  QUADRUPOLE, L=0.06, K1=  9.475140592                                     
+               QHD3:  QUADRUPOLE, L=0.06, K1= -0.390407945                                     
+               QHD2A: QUADRUPOLE, L=0.06, K1= -4.308387767                                     
+               QHD2:  QUADRUPOLE, L=0.06, K1= 12.16087827                                      
+               QHD1:  QUADRUPOLE, L=0.06, K1=-22.23282002                                      
+       760                                                                                     
+               BHD1: SBEND, L=0.1, ANGLE=0.127670835*CRTOD, E1=0, E2=0, TILT= 90               
+               BHD2: SBEND, L=0.1, ANGLE=0.127670835*CRTOD, E1=0, E2=0, TILT=-90               
+                                                                                               
+                                                                                               
+       765     HDLINE: LINE=(BHD1, DHD21, PMHD,CHHD,CVHD, QHD7,       &                        
+                                   DHD22, PMHD,CHHD,      QHD6,       &                        
+                                   DHD23, PMHD,     CVHD, QHD5,       &                        
+                                   DHD24,                       BHD2, &                        
+                                   DHD11, PMHD,CHHD,      QHD4,       &                        
+       770                         DHD12,                 QHD3,       &                        
+                                   DHD13, PMHD,     CVHD, QHD2A,      &                        
+                                             STARTTA1,                &                        
+                                   DHD14, PMHD,CHHD,CVHD, QHD2,       &                        
+                                   DHD15, PMHD,CHHD,CVHD, QHD1, DHD16)                         
+       775                                                                                     
+               HM2HD: LINE=(HM2C7, HDLINE)                                                     
+                                                                                               
+               ! TA REGION                                                                     
+               !---------------------------------------------------------                      
+       780                                                                                     
+               DTA11: DRIFT, L=(320.7309986-320.5309986)                                       
+               DTA12: DRIFT, L=(321.0309986-320.9309986)                                       
+               DTA21: DRIFT, L=(321.6907323-321.2907323)                                       
+               DTA22: DRIFT, L=(322.2907323-321.8907323)                                       
+       785     DTA31: DRIFT, L=(322.6999648-322.5499648)                                       
+               DTA32: DRIFT, L=(323.0499648-322.8999648)                                       
+               DTA41: DRIFT, L=(324.7707611-324.6207611)                                       
+               DTA42: DRIFT, L=(325.1207611-324.9707611)                                       
+               DTA51: DRIFT, L=(325.7799936-325.3799936)                                       
+       790     DTA52: DRIFT, L=(326.3799936-325.9799936)                                       
+               DTA61: DRIFT, L=(326.7397273-326.6397273)                                       
+               DTA62: DRIFT, L=(327.1397273-326.9397273)                                       
+                                                                                               
+               QTA1: QUADRUPOLE, L=0.2, K1=  1.210080329                                       
+       795     QTA2: QUADRUPOLE, L=0.2, K1=-12.55823524                                        
+               QTA3: QUADRUPOLE, L=0.2, K1=  6.401601954                                       
+               QTA4: QUADRUPOLE, L=0.2, K1=  6.401601954                                       
+               QTA5: QUADRUPOLE, L=0.2, K1=-12.55823524                                        
+               QTA6: QUADRUPOLE, L=0.2, K1=  1.210080329                                       
+       800                                                                                     
+               BTA1: SBEND, L=0.259733737, ANGLE=0.36515585*CRTOD,   &                         
+                          E1=-0.182577925*CRTOD, E2=-0.182577925*CRTOD                         
+               BTA2: SBEND, L=0.259232468, ANGLE=0.34906585*CRTOD,   &                         
+                          E1=-0.174532925*CRTOD, E2=-0.174532925*CRTOD, TILT=180               
+       805     BTA3A:SBEND, L=0.785398163, ANGLE=1.570796327*CRTOD,  E1=0, E2=0                
+               BTA3B:SBEND, L=0.785398163, ANGLE=1.570796327*CRTOD,  E1=0, E2=0                
+               BTA4: SBEND, L=0.259232468, ANGLE=0.34906585*CRTOD,   &                         
+                          E1=-0.174532925*CRTOD, E2=-0.174532925*CRTOD, TILT=180               
+               BTA5: SBEND, L=0.259733737, ANGLE=0.36515585*CRTOD,   &                         
+       810                E1=-0.182577925*CRTOD, E2=-0.182577925*CRTOD                         
+                                                                                               
+               SHUN1TA1: GKICK, L=0                                                            
+               SHUN2TA1: GKICK, L=0                                                            
+               BTA3I: GKICK, L=0                                                               
+       815     BTA3O: GKICK, L=0                                                               
+                                                                                               
+               !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+                                                                                               
+               TALINE: LINE=(DTA11, QTA1, DTA12, BTA1,  DTA21,      &                          
+       820       PMTA1,CHTA1,CVTA1, QTA2, DTA22, BTA2,  DTA31,      &                          
+                 PMTA1,CHTA1,CVTA1, QTA3, DTA32,                    &                          
+                                SHUN1TA1, BTA3I, BTA3A, PMTA1,      &                          
+                                                 BTA3B, BTA3O,      &                          
+                                              SHUN2TA1, DTA41,      &                          
+       825       PMTA1,CHTA1,CVTA1, QTA4, DTA42, BTA4,  DTA51,      &                          
+                 PMTA1,CHTA1,CVTA1, QTA5, DTA52, BTA5,  DTA61,      &                          
+                                       STARTR1,                     &                          
+                                    QTA6, DTA62)                                               
+               ! MOVE "END" OF ARC STEER INTO R1 REGION TO AVOID STEERING IN ARC (PATH LENGTH C
+       830     ! PUT PM,CH,CH AT CENTER OF QTA1 QR11 QR12 TRIPLET AND END ARC STEER THERE      
+               !  PMTA1,CHTA1,CVTA1, QTA6, DTA62)                                              
+                                                                                               
+                                                                                               
+               HM2TA: LINE=(HM2HD, TALINE)                                                     
+       835                                                                                     
+               ! R1 AND FODO REGION                                                            
+               !---------------------------------------------------------                      
+                                                                                               
+               DR111: DRIFT, L=(327.2397273-327.1397273)                                       
+       840     DR112: DRIFT, L=(327.6397273-327.3397273)                                       
+               DR113: DRIFT, L=(330.1397273-327.7397273)                                       
+               DR114: DRIFT, L=(333.0397273-330.2397273)                                       
+               DR115: DRIFT, L=(335.0397273-333.1397273)                                       
+                                                                                               
+       845     QR11: QUADRUPOLE, L=0.1, K1=-23.00487935                                        
+               QR12: QUADRUPOLE, L=0.1, K1= 14.3573123                                         
+               QR13: QUADRUPOLE, L=0.1, K1= -5.319624946                                       
+               QR14: QUADRUPOLE, L=0.1, K1=  3.577333151                                       
+               QR15: QUADRUPOLE, L=0.1, K1= -4.998192863                                       
+       850                                                                                     
+               DR1FODO: DRIFT, L=(345.0397273-335.1397273)                                     
+               DR1FODOH:DRIFT, L=(345.0397273-335.1397273)/2                                   
+                                                                                               
+               QR1F: QUADRUPOLE, L=0.1, K1= 1.414213562                                        
+       855     QR1D: QUADRUPOLE, L=0.1, K1=-1.414213562                                        
+                                                                                               
+               DR12: DRIFT, L=(503.1397273-495.1397273)                                        
+                                                                                               
+                                                                                               
+       860     !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+               R1LINE: LINE=(DR111, PMR1,CHR1,CVR1, QR11, &                                    
+                             DR112,                 QR12, &                                    
+                             DR113, PMR1,CHR1,CVR1, QR13, &                                    
+                             DR114, PMR1,CHR1,      QR14, &                                    
+       865                   DR115, PMR1,     CVR1, QR15, &                                    
+                  DR1FODO, PMR1,CHR1,      QR1F, DR1FODO, PMR1,     CVR1, QR1D, &              
+                  DR1FODO, PMR1,CHR1,      QR1F, DR1FODO, PMR1,     CVR1, QR1D, &              
+                  DR1FODO, PMR1,CHR1,      QR1F, DR1FODO, PMR1,     CVR1, QR1D, &              
+                  DR1FODO, PMR1,CHR1,      QR1F, DR1FODO, PMR1,     CVR1, QR1D, &              
+       870        DR1FODO, PMR1,CHR1,      QR1F, DR1FODO, PMR1,     CVR1, QR1D, &              
+                  DR1FODO, PMR1,CHR1,      QR1F, DR1FODO, PMR1,     CVR1, QR1D, &              
+                  DR1FODO, PMR1,CHR1,      QR1F, DR1FODO, PMR1,     CVR1, QR1D, &              
+                                                STARTR2,                        &              
+                  DR1FODO, PMR1,CHR1,CVR1, QR1F, DR1FODO, PMR1,CHR1,CVR1, QR1D, DR12)          
+       875     !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+                                                                                               
+               HM2R1: LINE=(HM2TA, R1LINE)                                                     
+                                                                                               
+               !R2 REGION                                                                      
+       880     !---------------------------------------------------------                      
+                                                                                               
+               DR211: DRIFT, L=(503.2397273-503.1397273)                                       
+               DR212: DRIFT, L=(504.9397273-503.3397273)                                       
+               DR213: DRIFT, L=(505.1397273-505.0397273)                                       
+       885     DR221: DRIFT, L=(507.4397273-505.4397273)                                       
+               DR222: DRIFT, L=(509.3897273-507.5397273)                                       
+               DR223: DRIFT, L=(511.3397273-509.4897273)                                       
+               DR224: DRIFT, L=(513.4397273-511.4397273)                                       
+                                                                                               
+       890                                                                                     
+               QR21: QUADRUPOLE, L=0.1, K1= 5.96787582                                         
+               QR22: QUADRUPOLE, L=0.1, K1=-5.798200708                                        
+               QR23: QUADRUPOLE, L=0.1, K1= 9.69132724                                         
+               *QR24: QUADRUPOLE, L=0.05,K1=-4.904419612                                       
+       895     QR24: QUADRUPOLE, L=0.1, K1=-4.904419612                                        
+               QR25: QUADRUPOLE, L=0.1, K1= 9.979410002                                        
+                                                                                               
+               BR21: SBEND, L=0.3, ANGLE=0.34906585*CRTOD, E1=0, E2=0,TILT=180                 
+               BR22: SBEND, L=0.3, ANGLE=0.321140582*CRTOD, E1=0, E2=0                         
+       900                                                                                     
+               ! MIGHT NEED TO FILL IN WITH OUT-OF-FOCUSING-PLANE CORRECTORS                   
+               ! BECAUSE OF VERY HIGH PHASE ADVANCE BETWEEN SOME QUADS                         
+               R2LINE: LINE=(DR211, PMR2,CHR2,      QR21, &                                    
+                             DR212, PMR2,     CVR2, QR22, &                                    
+       905      DR213, BR21, DR221, PMR2,CHR2,      QR23, &                                    
+                             DR222, PMR2,     CVR2, QR24, &                                    
+                             DR223, PMR2,CHR2,      QR25, &                                    
+                DR224, BR22)                                                                   
+                                                                                               
+       910     !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+                                                                                               
+               HM2R2: LINE=(HM2R1, R2LINE)                                                     
+                                                                                               
+               !R3 REGION                                                                      
+       915     !---------------------------------------------------------                      
+                                                                                               
+               DR311: DRIFT, L=(513.9397273-513.7397273)                                       
+               DR312: DRIFT, L=(515.6897273-514.0397273)                                       
+               DR313: DRIFT, L=(517.4397273-515.7897273)                                       
+       920     DR314: DRIFT, L=(517.7397273-517.5397273)                                       
+               DR321: DRIFT, L=(519.2064669-518.0397273)                                       
+               DR322: DRIFT, L=(520.3232066-519.3064669)                                       
+               DR323: DRIFT, L=(521.4399462-520.4232066)                                       
+               DR324: DRIFT, L=(522.7066858-521.5399462)                                       
+       925                                                                                     
+               QR31: QUADRUPOLE, L=0.1,  K1= -7.040071928                                      
+               QR32: QUADRUPOLE, L=0.1,  K1=  9.346230255                                      
+               QR33: QUADRUPOLE, L=0.1,  K1=-15.94616708                                       
+               QR34: QUADRUPOLE, L=0.1,  K1=-16.72379771                                       
+       930     *QR35: QUADRUPOLE, L=0.05, K1= 13.04098205                                      
+               QR35: QUADRUPOLE, L=0.1, K1= 13.04098205                                        
+               QR36: QUADRUPOLE, L=0.1,  K1=-16.72379771                                       
+                                                                                               
+                                                                                               
+       935     BR31: SBEND, L=0.3, ANGLE=0.261799388*CRTOD, E1=0, E2=0, TILT=-90               
+               BR32: SBEND, L=0.3, ANGLE=0.261799388*CRTOD, E1=0, E2=0, TILT= 90               
+                                                                                               
+               !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+               R3LINE: LINE=(DR311, PMR2,     CVR2, QR31, &                                    
+       940                   DR312, PMR2,CHR2,      QR32, &                                    
+                             DR313, PMR2,     CVR2, QR33, &                                    
+                DR314, BR31, DR321, PMR2,     CVR2, QR34, &                                    
+                             DR322, PMR2,CHR2,      QR35, &                                    
+                             DR323, PMR2,     CVR2, QR36, &                                    
+       945      DR324, BR32)                                                                   
+                                                                                               
+               HM2R3: LINE=(HM2R2, R3LINE)                                                     
+                                                                                               
+               ! R4 AND FODO REGION                                                            
+       950     !---------------------------------------------------------                      
+                                                                                               
+               DR411: DRIFT, L=(523.4566858-523.0066858)                                       
+               DR412: DRIFT, L=(524.9566858-523.5566858)                                       
+               DR413: DRIFT, L=(531.907246 -525.0566858)                                       
+       955     DR414: DRIFT, L=(539.5317973-532.007246 )                                       
+               DR415: DRIFT, L=(547.1563485-539.6317973)                                       
+               DR416: DRIFT, L=(553.0569087-547.2563485)                                       
+               DR417: DRIFT, L=(555.0569087-553.1569087)                                       
+               DR418: DRIFT, L=(556.1569087-555.1569087)                                       
+       960     DR421: DRIFT, L=(558.4069087-556.4569087)                                       
+               DR422: DRIFT, L=(560.4569087-558.5069087)                                       
+               DR431: DRIFT, L=(561.7569087-560.7569087)                                       
+               DR432: DRIFT, L=(563.7569087-561.8569087)                                       
+               DR433: DRIFT, L=(565.7569087-563.8569087)                                       
+       965     DR434: DRIFT, L=(568.2569087-565.8569087)                                       
+                                                                                               
+               QR41:QUADRUPOLE,  L=0.1,  K1=-13.88218689                                       
+               QR42:QUADRUPOLE,  L=0.1,  K1=  5.524687638                                      
+               QR43:QUADRUPOLE,  L=0.1,  K1= -2.43925831                                       
+       970     QR44:QUADRUPOLE,  L=0.1,  K1=  2.144100597                                      
+               QR45:QUADRUPOLE,  L=0.1,  K1= -2.545291833                                      
+               QR46:QUADRUPOLE,  L=0.1,  K1=  4.888623012                                      
+               QR47:QUADRUPOLE,  L=0.1,  K1= -4.41297428                                       
+               *QR48:QUADRUPOLE,  L=0.05, K1=  9.44816933                                      
+       975     QR48:QUADRUPOLE,  L=0.1,  K1=  9.44816933                                       
+               QR49:QUADRUPOLE,  L=0.1,  K1= -3.913793241                                      
+               QR410:QUADRUPOLE, L=0.1,  K1=  5.437358446                                      
+               QR411:QUADRUPOLE, L=0.1,  K1= -2.893803043                                      
+                                                                                               
+       980     BR41: SBEND, L=0.3, ANGLE=0.097613328*CRTOD, E1=0, E2=0, TILT=180               
+               BR42: SBEND, L=0.3, ANGLE=0.097613328*CRTOD, E1=0, E2=0, TILT=180               
+                                                                                               
+               DR4FODO: DRIFT, L=(575.6569087-568.2569087)                                     
+               DR4FODOH:DRIFT, L=(575.6569087-568.2569087)/2                                   
+       985                                                                                     
+               QR4F1: QUADRUPOLE, L=0.1, K1= 1.885618083                                       
+               QR4D1: QUADRUPOLE, L=0.1, K1=-1.885618083                                       
+               QR4F2: QUADRUPOLE, L=0.1, K1= 1.042633937                                       
+               QR4D2: QUADRUPOLE, L=0.1, K1=-0.867431309                                       
+       990                                                                                     
+               DR44: DRIFT,  L=(631.4729507-628.2569087)                                       
+               DR451: DRIFT, L=(633.2929507-631.4729507)                                       
+               DR452: DRIFT, L=(636.9729507-635.1529507)                                       
+               DR461: DRIFT, L=(637.8729507-636.9729507)                                       
+       995     DR462: DRIFT, L=(638.3729507-637.9729507)                                       
+               DR463: DRIFT, L=(640.3729507-638.4729507)                                       
+               DR464: DRIFT, L=(640.7729507-640.4729507)                                       
+               DR465: DRIFT, L=(640.9729507-640.8729507)                                       
+                                                                                               
+      1000     QR412:QUADRUPOLE, L=0.1, K1=  0.740423079                                       
+               QR413:QUADRUPOLE, L=0.1, K1= -0.27241387                                        
+               QR414:QUADRUPOLE, L=0.1, K1= 11.57693608                                        
+               QR415:QUADRUPOLE, L=0.1, K1=-16.59507496                                        
+                                                                                               
+      1005     DRFR4: DRIFT, L=0.2959211971                                                    
+               RFR4: CEBCAV, L=CAVLEN5, EN0=ENERG0, DELTAE=0, PHI0=0, &                        
+                                     NCELL=5, NSTEP=350                                        
+                                                                                               
+               R4CHIRP: LINE=(DRFHM1, RFHM1, DRFHM1)                                           
+      1010                                                                                     
+               !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+                                                                                               
+               R4LINE: LINE=(DR411, PMR2,     CVR2, QR41,                         &            
+                             DR412, PMR2,CHR2,      QR42,                         &            
+      1015                   DR413, PMR2,     CVR2, QR43,                         &            
+                             DR414, PMR2,CHR2,      QR44,                         &            
+                             DR415, PMR2,     CVR2, QR45,                         &            
+                             DR416, PMR2,CHR2,      QR46,                         &            
+                             DR417, PMR2,     CVR2, QR47,                         &            
+      1020      DR418, BR41, DR421, PMR2,CHR2,      QR48,                         &            
+                DR422, BR42, DR431, PMR2,     CVR2, QR49,                         &            
+                             DR432, PMR2,CHR2,      QR410,                        &            
+                             DR433, PMR2,     CVR2, QR411, DR434,                 &            
+                 DR4FODO, PMR2,CHR2,      QR4F1, DR4FODO, PMR2,     CVR2, QR4D1,  &            
+      1025       DR4FODO, PMR2,CHR2,      QR4F1, DR4FODO, PMR2,     CVR2, QR4D1,  &            
+                 DR4FODO, PMR2,CHR2,      QR4F1, DR4FODO, PMR2,     CVR2, QR4D1,  &            
+                 DR4FODO, PMR2,CHR2,      QR4F2, DR4FODO, PMR2,CHR2,CVR2, QR4D2,  &            
+                             DR44,                         DR451,                 &            
+                    R4CHIRP, DR452,                                               &            
+      1030                                  STARTTB1,                             &            
+                             DR461, PMR2,CHR2,CVR2, QR412,                        &            
+                             DR462,                 QR413,                        &            
+                             DR463,                 QR414,                        &            
+                             DR464, PMR2,CHR2,CVR2, QR415, DR465)                              
+      1035                                                                                     
+               !TREATS FINAL PAIRS OF QUADS AS DOUBLETS AND ASSIGNS BPM/CORR TO EACH DOUBLET   
+               ! (2ND DOUBLET IS BASICALLY 1ST TWO QUADS OF TRIPLET IN FRONT OF BATES BEND)    
+               HM2R4: LINE=(HM2R3, R4LINE)                                                     
+                                                                                               
+      1040     ! TB REGION                                                                     
+               !---------------------------------------------------------                      
+               DTBSLI1: DRIFT, L=(641.3744507-640.9729507)                                     
+               DTB11: DRIFT,   L=(641.4744507-641.3744507)                                     
+               DTB12: DRIFT,   L=(641.8744507-641.6744507)                                     
+      1045     DTB21: DRIFT,   L=(642.5336832-642.1336832)                                     
+               DTB22: DRIFT,   L=(643.1336832-642.7336832)                                     
+               DTB31: DRIFT,   L=(643.5429156-643.3929156)                                     
+               DTB32: DRIFT,   L=(643.8929156-643.7429156)                                     
+               DTB41: DRIFT,   L=(645.6137119-645.4637119)                                     
+      1050     DTB42: DRIFT,   L=(645.9637119-645.8137119)                                     
+               DTB51: DRIFT,   L=(646.6229444-646.2229444)                                     
+               DTB52: DRIFT,   L=(647.2229444-646.8229444)                                     
+               DTB61: DRIFT,   L=(647.6821769-647.4821769)                                     
+               DTB62: DRIFT,   L=(647.9821769-647.8821769)                                     
+      1055     DTBSLI2: DRIFT, L=(648.3836769-647.9821769)                                     
+                                                                                               
+               QTB1: QUADRUPOLE, L=0.2, K1= -1.270724877                                       
+               QTB2: QUADRUPOLE, L=0.2, K1=-13.48889373                                        
+               QTB3: QUADRUPOLE, L=0.2, K1=  6.493152186                                       
+      1060     QTB4: QUADRUPOLE, L=0.2, K1=  6.493152186                                       
+               QTB5: QUADRUPOLE, L=0.2, K1=-13.48889373                                        
+               QTB6: QUADRUPOLE, L=0.2, K1=  2.074816398                                       
+                                                                                               
+                                                                                               
+      1065     ! NOTE THESE ARE ***REVERSED**** EDGE ANGLES (TO MATCH OPTICS TO CSV FILE)      
+               ! DIPOLES FOCUS STRONGLY HORIZONTALLY...                                        
+                                                                                               
+                                                                                               
+               BTB1: SBEND, L=0.259232468, ANGLE=0.34906585*CRTOD,  &                          
+      1070         E1=-0.174532925*CRTOD, E2=-0.174532925*CRTOD                                
+               BTB2: SBEND, L=0.259232468, ANGLE=0.34906585*CRTOD,  &                          
+                   E1=-0.174532925*CRTOD, E2=-0.174532925*CRTOD, TILT=180                      
+               BTB3A: SBEND, L=0.785398163, ANGLE=1.570796327*CRTOD, E1=0, E2=0                
+               BTB3B: SBEND, L=0.785398163, ANGLE=1.570796327*CRTOD, E1=0, E2=0                
+      1075     BTB4: SBEND, L=0.259232468, ANGLE=0.34906585*CRTOD,  &                          
+                   E1=-0.174532925*CRTOD, E2=-0.174532925*CRTOD, TILT=180                      
+               BTB5: SBEND, L=0.259232468, ANGLE=0.34906585*CRTOD,  &                          
+                   E1=-0.174532925*CRTOD, E2=-0.174532925*CRTOD                                
+                                                                                               
+      1080     SHUN1TB1: GKICK, L=0                                                            
+               SHUN2TB1: GKICK, L=0                                                            
+               BTB3I: GKICK, L=0                                                               
+               BTB3O: GKICK, L=0                                                               
+                                                                                               
+      1085                                                                                     
+               !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+                                                                                               
+               TBLINE: LINE=(DTBSLI1,           DTB11, QTB1,               &                   
+                DTB12, BTB1, DTB21, PMTB1,CHTB1,CVTB1, QTB2,               &                   
+      1090      DTB22, BTB2, DTB31, PMTB1,CHTB1,CVTB1, QTB3, DTB31,        &                   
+                 SHUN1TB1, BTB3I, BTB3A, PMTB1, BTB3B, BTB3O, SHUN2TB1,    &                   
+                             DTB41, PMTB1,CHTB1,CVTB1, QTB4,               &                   
+                DTB42, BTB4, DTB51, PMTB1,CHTB1,CVTB1, QTB5,               &                   
+                DTB52, BTB5, DTB61,                    QTB6,  DTB62, DTBSLI2)                  
+      1095     ! TREAT QTB6 AS 1ST QUAD OF TRIPLET; PUT CORRECTION AT CENTER QUAD              
+                                                                                               
+                                                                                               
+               !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+                                                                                               
+      1100                                                                                     
+               HM2TB: LINE=(HM2R4, TBLINE)                                                     
+                                                                                               
+               !  MH REGION                                                                    
+               !---------------------------------------------------------                      
+      1105                                                                                     
+               DMH11: DRIFT, L=(648.4836769-648.3836769)                                       
+               DMH12: DRIFT, L=(648.8836769-648.5836769)                                       
+               DMH13: DRIFT, L=(652.2836769-648.9836769)                                       
+               DMH14: DRIFT, L=(652.6836769-652.3836769)                                       
+      1110     DMH15: DRIFT, L=(652.8836769-652.7836769)                                       
+               DMH2: DRIFT,  L=(654.248936 -653.1836769)                                       
+               DMH3: DRIFT,  L=(655.9308451-654.548936)                                        
+                                                                                               
+               QMH1: QUADRUPOLE, L=0.1, K1=-18.30368517                                        
+      1115     QMH2: QUADRUPOLE, L=0.1, K1=  9.778153532                                       
+               QMH3: QUADRUPOLE, L=0.1, K1=  8.611891896                                       
+               QMH4: QUADRUPOLE, L=0.1, K1=-11.39649436                                        
+                                                                                               
+               BMH1: SBEND, L=0.3, ANGLE=0.006955992*CRTOD, E1=0, E2=0, TILT=180               
+      1120     BMH2: SBEND, L=0.3, ANGLE=0.013953271*CRTOD, E1=0, E2=0                         
+                                                                                               
+                                                                                               
+               !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+                                                                                               
+      1125     MHLINE: LINE=(DMH11, PMTB1,CHTB1,CVTB1, QMH1, &                                 
+                             DMH12,                    QMH2, &                                 
+                             DMH13,                    QMH3, &                                 
+                             DMH14, PMTB1,CHTB1,CVTB1, QMH4, &                                 
+                DMH15, BMH1,                                 &                                 
+      1130      DMH2,  BMH2, DMH3,  PMTB1,CHTB1,CVTB1)                                         
+               ! FINAL QUAD PAIR TREATED AS DOUBLET                                            
+                                                                                               
+               HM2MH: LINE=(HM2TB, MHLINE)                                                     
+                                                                                               
+      1135     !  MG REGION                                                                    
+               !---------------------------------------------------------                      
+                                                                                               
+               DMG31: DRIFT, L=(656.3308451-656.2308451)                                       
+               DMG32: DRIFT, L=(658.3808451-656.8308451)                                       
+      1140                                                                                     
+               SMG1A: SOLENOID, L=0.25, KS=-0.068210419                                        
+               SMG1B: SOLENOID, L=0.25, KS=-0.068210419                                        
+                                                                                               
+               !BMG1: SBEND,L=0.3,ANGLE=0.174532925*CRTOD, E1=0, E2=0, TILT=180                
+      1145     ! CSV HAS OFFSET IN B FIELD???                                                  
+                                                                                               
+               BMG1A: SBEND,L=0.15,ANGLE=0.011601279*CRTOD, E1=0, E2=0, TILT=180               
+               BMG1B: SBEND,L=0.15,ANGLE=0.011601279*CRTOD, E1=0, E2=0, TILT=180               
+                                                                                               
+      1150     CONNECT: MATRIX, L=0, R11=1.014200121, R12=0,           &                       
+                                     R21=0,           R22=0.985998699, &                       
+                                     R33=1,           R34=0,           &                       
+                                     R43=0,           R44=1,           &                       
+                                     R55=1,           R66=1                                    
+      1155                                                                                     
+               FIT1: MARKER                                                                    
+               !2345789*123456789*123456789*123456789*123456789*123456789*123456789*12         
+               !MGREGION: LINE=(CONNECT, BMG1A, BMG1B, FIT1, &                                 
+               !                    DMG31, SMG1A, SMG1B, DMG32)                                
+      1160     MGREGION: LINE=(CONNECT)                                                        
+                                                                                               
+                                                                                               
+               HM2MG: LINE=(HM2MH, MGREGION)                                                   
+                                                                                               
+      1165     !**** MIGHT THINK ABOUT UPDATING BEAM ENVELOPES IN ALIGNMENT FITTING            
+               ! INCOMING BETAS                                                                
+               ! 3.379  -0.7034 0 0                                                            
+               !17.850  -6.3498 0 0                                                            
+               ! ASSUME 3 MM MRAD INCOMING                                                     
+      1170     ! SIGMAX =SQRT(3 X 3.8/300) MM = 0.2                                            
+               ! SIGMAX'=SQRT(3 X (1+0.49/3.38)/300) MRAD = 0.066                              
+               ! SIGMAY =SQRT(3 X 17.8/300) MM = 0.4                                           
+               ! SIGMAY'=SQRT(3 X (1+40)/18/300) MRAD =  0.23                                  
+                                                                                               
+      1175                                                                                     
+                                                                                               
+               USE, COOLIT                                                                     
+0... BEAM LINE "COOLIT" EXPANDED:      1043 ELEMENTS,      1271 POSITIONS
+ ... END OF "USE" COMMAND, ELAPSED CPU TIME =       0.000 SECONDS
+ 
+                                                                                               
+               DIMAT                                                                           
+ MATRIX                                                                          
+
+
+    HORIZONTAL MOVEMENT ANALYSIS
+
+
+   COMPACTION FACTOR =-0.7089654E-04   GAMMA TR =         -0.1187647E+03
+
+   COS(MU)=-0.88361493799040E+00         NU = 0.57755123867461E+00
+   ETA =-0.12905189398643E-03            ETAP =-0.77425206580308E-04
+   ALPHA =-0.66391871242809E+00          BETA = 0.26288632774131E+01
+
+   DMU /DELTA=-0.36100191453983E+03      CHROMATICITY   =-0.57455239164652E+02
+   DALPHA /DDELTA=-0.15257606607363E+03  DBETA/DDELTA=-0.43192703628985E+03
+   DETA/DDELTA= 0.91023370437712E+00     DETAP/DDELTA= 0.77055871986589E-01
+
+
+
+    VERTICAL MOVEMENT ANALYSIS
+
+   MOVEMENT IS UNSTABLE  
+ MACHINE                                                                         
+
+ MAXIMUM LATTICE FUNCTIONS :
+ BETA X =    0.6353670040E+02     BETA Y =    0.5540635565E+02
+ ETA  X =    0.3953511993E-01     ETA  Y =    0.2021053380E-15
+ HARDWARE LAYOUT                                                                 
+ BEAM DEFINITION                                                                 
+ DETAILED ANALYSIS - IDEAL                                                       
+ ERRORS DATA DEFINITION                                                          
+ MISALIGNMENT DATA DEFINITION                                                    
+ SEED                                                                            
+ SETERRORS                                                                       
+ SETMISALIGNMENTS                                                                
+ SHOMISALIGNMENTS BEFORE BLOCK MISALIGNMENT                                      
+ BLOCK MISALIGNMENT                                                              
+ SHOMISALIGNMENTS WITH BLOCK MISALIGNMENT                                        
+ REFERENCE ORBIT DISPLAY - UNCORRECTED                                           
+ REFERENCE ORBIT DISPLAY - UNCORRECTED                                           
+ REFERENCE ORBIT DISPLAY - UNCORRECTED                                           
+ RMATRIX - UNCORRECTED                                                           
+ BEAM DEFINITION - UNCORRECTED                                                   
+ DETAILED ANALYSIS - UNCORRECTED ON-MOMENTUM ENVELOPES                           
+ CORRECTOR DEFINITION                                                            
+ ALIGNMENT FITTING - 2ND, SECTION C1                                             
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.374161E-04
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.748321E-04
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.748321E-04
+ ALIGNMENT FITTING - 3RD, SECTION C2                                             
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.315425E-04
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.630869E-04
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.630869E-04
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A                                    
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.447140E-07
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.894281E-07
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.894281E-07
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - B                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.117298E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.234597E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.234597E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - C                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.157199E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.314398E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.314398E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - D                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.127962E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.255924E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.255924E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - E                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.122000E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.244000E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.244000E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - F                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.114763E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.229526E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.229526E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - G                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.155061E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.310122E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.310122E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - H                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.201724E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.403448E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.403448E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - I                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.185918E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.371835E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.371835E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - J                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.175272E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.350543E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.350543E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - K                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.178815E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.357631E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.357631E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - L                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.177296E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.354592E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.354592E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - M                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.172173E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.344346E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.344346E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - N                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.168809E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.337618E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.337618E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - O                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.164976E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.329952E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.329952E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - P                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.160528E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.321056E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.321056E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - Q                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.160494E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.320988E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.320988E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - R                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.159304E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.318608E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.318608E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - S                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.156351E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.312703E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.312703E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - T                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.153677E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.307353E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.307353E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - U                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.151491E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.302982E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.302982E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - V                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.148480E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.296961E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.296961E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - W                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.145181E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.290363E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.290363E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - X                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.142395E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.284789E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.284789E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - Y                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.143435E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.286869E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.286869E-03
+ ALIGNMENT FITTING - 4TH, SECTION AMPLIFIER A - Z                                
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.141719E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.283438E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.283438E-03
+ ALIGNMENT FITTING - 5TH, SECTION C3/4                                           
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.480369E-04
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.960780E-04
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.960780E-04
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A                                     
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.267619E-07
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.535238E-07
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.535238E-07
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - B                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.280704E-04
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.561409E-04
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.561409E-04
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - C                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.218906E-04
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.437812E-04
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.437812E-04
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - D                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.566914E-04
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.113383E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.113383E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - E                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.817223E-04
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.163445E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.163445E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - F                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.702298E-04
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.140460E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.140460E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - G                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.857489E-04
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.171498E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.171498E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - H                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.948148E-04
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.189630E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.189630E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - I                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.889313E-04
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.177863E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.177863E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - J                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.103465E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.206929E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.206929E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - K                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.109935E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.219869E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.219869E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - L                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.163470E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.326940E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.326940E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - M                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.155233E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.310466E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.310466E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - N                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.147189E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.294378E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.294378E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - O                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.142578E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.285156E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.285156E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - P                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.138516E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.277032E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.277032E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - Q                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.135112E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.270224E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.270224E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - S                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.136546E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.273093E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.273093E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - T                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.136204E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.272407E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.272407E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - U                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.134337E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.268675E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.268675E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - V                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.135662E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.271323E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.271323E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - W                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.133809E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.267619E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.267619E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - X                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.134050E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.268100E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.268100E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - Y                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.136125E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.272249E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.272249E-03
+ ALIGNMENT FITTING - 6TH, SECOND AMPLIFIER A - Z                                 
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.134693E-03
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.269387E-03
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.269387E-03
+ ALIGNMENT FITTING - 7TH, SECTION C6                                             
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.358249E-04
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.716487E-04
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.716487E-04
+ ALIGNMENT FITTING - 8TH, SECTION C7                                             
+ AFTER STEP    1 THE FIT FUNCTION VALUE IS   0.257676E-04
+ AFTER STEP    2 THE FIT FUNCTION VALUE IS   0.515352E-04
+ AFTER STEP    3 THE FIT FUNCTION VALUE IS   0.515352E-04
+ REFERENCE ORBIT DISPLAY - CORRECTED                                             
+ REFERENCE ORBIT DISPLAY - CORRECTED                                             
+ REFERENCE ORBIT DISPLAY - CORRECTED                                             
+ RMATRIX - CORRECTED                                                             
+ DETAILED ANALYSIS - CORRECTED ON-MOMENTUM ENVELOPES                             
+      1180                                                                                     
+                                                                                               
+               STOP                                                                            
